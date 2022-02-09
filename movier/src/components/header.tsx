@@ -5,9 +5,10 @@ import { key } from "../auth";
 export default function Header() {
   const [categories, setCategories] = useState<any[]>([]);
 
+
   const getMoviesCategory = () => {
     axios
-      .get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${key}`)
+      .get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=pt-BR`)
       .then((res) => {
         console.log(res.data.genres);
         setCategories(res.data.genres);
@@ -19,18 +20,21 @@ export default function Header() {
   return (
     <>
       <div>
-        Categorias
+        Movier
+        <br></br>
         {categories.map((category) => (
           <button>{category.name}</button>
         ))}
       </div>
-      <button
+      <br></br>
+      <button 
         onClick={() => {
           getMoviesCategory();
         }}
       >
         Categorias
       </button>
+
     </>
   );
 }
