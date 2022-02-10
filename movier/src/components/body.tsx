@@ -36,7 +36,7 @@ export default function Body() {
       columnSpacing={1}
     >
       {movies.map((movie, i) => (
-        <Card
+        <Card key={i}
           sx={{ marginRight: "20px", marginTop: "50px", marginLeft: "45px" }}
         >
           <CardActionArea >

@@ -26,8 +26,9 @@ export default function Categories() {
   return (
     <Paper sx={{ backgroundColor: "#2D0C5E" }}>
         <br></br>
-        {categories.map((category) => (
+        {categories.map((category, i) => (
           <Button
+          key={i}
             variant="contained"
             sx={{ marginLeft: "20px", marginBottom: "15px" }}
             size={"small"}
