@@ -1,12 +1,14 @@
-
-import Header from "./components/header";
-import Body from "./components/body";
+import { Routes, Route } from "react-router-dom";
+import Details from "./pages/Details";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <>
-      <Header/>
-      <Body />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie" element={<Details />} />
+      </Routes>
     </>
   );
 }
