@@ -3,7 +3,7 @@
 
 	• Para estilizar os componentes escolhi o material ui (https://mui.com/pt/), por ser a biblioteca que mais tenho familiaridade.
 
-	• O Typescript foi escolhido para acrescentar ao projeto tecnologias utilizadas no mercedado, e também pela praticidade de desenvolvimento.
+	• O Typescript foi escolhido para acrescentar ao projeto tecnologias utilizadas no mercado, e também pela praticidade de desenvolvimento.
 
 	• Para consumir os endpoints escolhi o axios, pela sua simplicidade de implementação e performace.
 
