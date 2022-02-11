@@ -23,7 +23,6 @@ export default function Details() {
       .then((res) => {
         setMovie(res.data);
         console.log(res.data);
-        
       })
       .catch((err) => {
         console.log(err);
@@ -35,21 +34,30 @@ export default function Details() {
       <Header />
       <Grid
         container
-        spacing={1}
-        columns={{ xs: 2, sm: 4, md: 6 }}
+        columns={{ xs: 2, sm: 4, md: 8 }}
         rowSpacing={1}
         columnSpacing={1}
-        justifyContent={'center'}
-
+        sx={{ diplay: "flex", flexDirection: "row" }}
       >
-        <Paper sx={{display: 'flex', flexDirection: 'row'}}>
+        <Paper>
           <img
             style={{ marginLeft: "50px" }}
-            src={`${baseImgUrl}/${size}${movie.poster_path}`}
+            src={`${baseImgUrl}/${size}${movie?.poster_path}`}
             alt={`img ${movie.title}`}
           />
-          <Typography>{`${movie.title} •` }  </Typography>
-          <Typography>{`${movie?.release_date?.split("-").reverse().join("/")}(BR) •`}</Typography>
+        </Paper>
+        <Paper sx={{ display: "flex", flexDirection: "row" }}>
+          <Typography variant={"subtitle2"}>{`${movie.title} •`} </Typography>
+          <Typography variant={"subtitle2"}>
+            {`${movie?.release_date?.split("-").reverse().join("/")}(BR) •`}
+          </Typography>
+          {movie?.genres?.map((genres: any, key: number) => (
+            <Typography
+              key={key}
+              variant={"subtitle2"}
+            >{`${genres.name} -`}</Typography>
+          ))}
+          <Typography></Typography>
         </Paper>
       </Grid>
     </>
